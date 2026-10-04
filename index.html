@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Habits</title>
+    <link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#18181b">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <h1>My Habits</h1>
+            <p id="date">Today</p>
+        </header>
+
+        <section class="progress-section">
+            <h2>Today's Progress</h2>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="progress-text">0% Complete</p>
+        </section>
+
+        <section class="habits-section">
+
+            <div class="habit">
+                <div>
+                    <h3>💻 JavaScript</h3>
+                    <p>🔥 0 day streak</p>
+                </div>
+
+                <button class="done-btn">✓ Done</button>
+            </div>
+
+            <div class="habit">
+                <div>
+                    <h3>📚 English</h3>
+                    <p>🔥 0 day streak</p>
+                </div>
+
+                <button class="done-btn">✓ Done</button>
+            </div>
+
+            <div class="habit">
+                <div>
+                    <h3>🏃 Exercise</h3>
+                    <p>🔥 0 day streak</p>
+                </div>
+
+                <button class="done-btn">✓ Done</button>
+            </div>
+
+        </section>
+
+        <button class="add-btn">+ Add Habit</button>
+
+    </div>
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js");
+    }
+</script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
