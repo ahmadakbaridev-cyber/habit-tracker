@@ -1,76 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Habits</title>
-    <link rel="manifest" href="manifest.json">
 
-<meta name="theme-color" content="#18181b">
+    <title>Mindscape | Your Living Goals</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="app">
+    <!-- ================= HEADER ================= -->
 
-        <header>
-            <h1>My Habits</h1>
-            <p id="date">Today</p>
-        </header>
+    <header class="header">
 
-        <section class="progress-section">
-            <h2>Today's Progress</h2>
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>Mindscape</span>
+        </div>
 
-            <div class="progress-container">
-                <div id="progress-bar"></div>
+        <nav class="nav">
+
+            <a href="#mindmap">Mind Map</a>
+            <a href="#goals">Goals</a>
+            <a href="#focus">Focus</a>
+
+        </nav>
+
+        <button class="theme-btn" id="themeBtn">
+            ◐
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    ✦ YOUR DIGITAL MIND
+                </span>
+
+                <h1>
+                    Turn your thoughts
+                    <span>into a living world.</span>
+                </h1>
+
+                <p>
+                    Build your goals, connect your ideas,
+                    and watch your progress grow.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn" id="startBtn">
+                        Start Building
+                        <span>→</span>
+                    </button>
+
+                    <button class="secondary-btn" id="demoBtn">
+                        Explore Demo
+                    </button>
+
+                </div>
+
             </div>
 
-            <p id="progress-text">0% Complete</p>
+            <div class="hero-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="core-node">
+                    <span>✦</span>
+                    <small>YOU</small>
+                </div>
+
+                <div class="floating-node node-one">
+                    <strong>JavaScript</strong>
+                    <small>65%</small>
+                </div>
+
+                <div class="floating-node node-two">
+                    <strong>English</strong>
+                    <small>42%</small>
+                </div>
+
+                <div class="floating-node node-three">
+                    <strong>Portfolio</strong>
+                    <small>78%</small>
+                </div>
+
+                <div class="floating-node node-four">
+                    <strong>Career</strong>
+                    <small>34%</small>
+                </div>
+
+                <div class="connection connection-one"></div>
+                <div class="connection connection-two"></div>
+                <div class="connection connection-three"></div>
+                <div class="connection connection-four"></div>
+
+            </div>
+
         </section>
 
-        <section class="habits-section">
 
-            <div class="habit">
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">◎</span>
+
                 <div>
-                    <h3>💻 JavaScript</h3>
-                    <p>🔥 0 day streak</p>
+                    <strong id="goalCount">04</strong>
+                    <p>Active Goals</p>
                 </div>
 
-                <button class="done-btn">✓ Done</button>
             </div>
 
-            <div class="habit">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">↗</span>
+
                 <div>
-                    <h3>📚 English</h3>
-                    <p>🔥 0 day streak</p>
+                    <strong id="progressValue">68%</strong>
+                    <p>Overall Progress</p>
                 </div>
 
-                <button class="done-btn">✓ Done</button>
             </div>
 
-            <div class="habit">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">🔥</span>
+
                 <div>
-                    <h3>🏃 Exercise</h3>
-                    <p>🔥 0 day streak</p>
+                    <strong id="streakValue">12</strong>
+                    <p>Day Streak</p>
                 </div>
 
-                <button class="done-btn">✓ Done</button>
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon">◷</span>
+
+                <div>
+                    <strong id="focusTime">24h</strong>
+                    <p>Focus Time</p>
+                </div>
+
             </div>
 
         </section>
 
-        <button class="add-btn">+ Add Habit</button>
 
-    </div>
-    <script>
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("sw.js");
-    }
-</script>
+        <!-- ================= MIND MAP ================= --><section class="mindmap-section" id="mindmap">
 
-    <script src="app.js"></script>
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR UNIVERSE
+                    </span>
+
+                    <h2>
+                        Mind Map
+                    </h2>
+
+                    <p>
+                        Every goal is connected.
+                        Every action changes your world.
+                    </p>
+
+                </div>
+
+                <button class="add-btn" id="addGoalBtn">
+                    + Add Goal
+                </button>
+
+            </div>
+
+
+            <div class="mindmap">
+
+                <div class="grid-background"></div>
+
+                <div class="map-center">
+
+                    <div class="center-ring"></div>
+
+                    <div class="center-node">
+                        <span>✦</span>
+                        <small>YOUR WORLD</small>
+                    </div>
+
+                </div>
+
+
+                <!-- Goal 1 -->
+
+                <div class="goal-node goal-a" data-goal="javascript">
+
+                    <div class="goal-circle">
+                        <span>JS</span>
+                    </div>
+
+                    <div class="goal-info">
+
+                        <strong>JavaScript</strong>
+
+                        <span>65%</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Goal 2 -->
+
+                <div class="goal-node goal-b" data-goal="english">
+
+                    <div class="goal-circle">
+                        <span>EN</span>
+                    </div>
+
+                    <div class="goal-info">
+
+                        <strong>English</strong>
+
+                        <span>42%</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Goal 3 -->
+
+                <div class="goal-node goal-c" data-goal="portfolio">
+
+                    <div class="goal-circle">
+                        <span>PF</span>
+                    </div>
+
+                    <div class="goal-info">
+
+                        <strong>Portfolio</strong>
+
+                        <span>78%</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Goal 4 -->
+
+                <div class="goal-node goal-d" data-goal="career">
+
+                    <div class="goal-circle">
+                        <span>CR</span>
+                    </div>
+
+                    <div class="goal-info">
+
+                        <strong>Career</strong>
+
+                        <span>34%</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map-line line-a"></div>
+                <div class="map-line line-b"></div>
+                <div class="map-line line-c"></div>
+                <div class="map-line line-d"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GOALS ================= -->
+
+        <section class="goals-section" id="goals">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR PROGRESS
+                    </span>
+
+                    <h2>
+                        Active Goals
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="goal-grid">
+
+                <!-- Goal Card -->
+
+                <article class="goal-card">
+
+                    <div class="goal-card-top">
+
+                        <div class="goal-symbol">
+                            JS
+                        </div>
+
+                        <span class="percentage">
+                            65%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Master JavaScript
+                    </h3>
+
+                    <p>
+                        Build real-world projects and
+                        improve programming logic.
+                    </p>
+
+                    <div class="progress">
+
+                        <divclass="progress-bar"
+                            style="width: 65%;">
+                        </div>
+
+                    </div>
+
+                    <div class="goal-footer">
+
+                        <span>13 / 20 tasks</span>
+
+                        <button
+                            class="goal-action"
+                            data-action="javascript">
+                            →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Goal Card -->
+
+                <article class="goal-card">
+
+                    <div class="goal-card-top">
+
+                        <div class="goal-symbol">
+                            EN
+                        </div>
+
+                        <span class="percentage">
+                            42%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        English C1
+                    </h3>
+
+                    <p>
+                        Improve vocabulary, grammar,
+                        speaking and listening.
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width: 42%;">
+                        </div>
+
+                    </div>
+
+                    <div class="goal-footer">
+
+                        <span>8 / 19 tasks</span>
+
+                        <button
+                            class="goal-action"
+                            data-action="english">
+                            →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Goal Card -->
+
+                <article class="goal-card">
+
+                    <div class="goal-card-top">
+
+                        <div class="goal-symbol">
+                            PF
+                        </div>
+
+                        <span class="percentage">
+                            78%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Build Portfolio
+                    </h3>
+
+                    <p>
+                        Create powerful projects for
+                        your developer portfolio.
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width: 78%;">
+                        </div>
+
+                    </div>
+
+                    <div class="goal-footer">
+
+                        <span>18 / 23 tasks</span>
+
+                        <button
+                            class="goal-action"
+                            data-action="portfolio">
+                            →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Goal Card -->
+
+                <article class="goal-card">
+
+                    <div class="goal-card-top">
+
+                        <div class="goal-symbol">
+                            CR
+                        </div>
+
+                        <span class="percentage">
+                            34%
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Career
+                    </h3>
+
+                    <p>
+                        Prepare your skills and
+                        applications for the future.
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width: 34%;">
+                        </div>
+
+                    </div>
+
+                    <div class="goal-footer">
+
+                        <span>6 / 18 tasks</span>
+
+                        <button
+                            class="goal-action"
+                            data-action="career">
+                            →
+                        </button></div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOCUS ================= -->
+
+        <section class="focus-section" id="focus">
+
+            <div class="focus-card">
+
+                <div class="focus-content">
+
+                    <span class="section-label">
+                        DEEP WORK
+                    </span>
+
+                    <h2>
+                        Focus on one thing.
+                    </h2>
+
+                    <p>
+                        Choose a goal and enter a
+                        distraction-free focus session.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        id="focusBtn">
+
+                        Start Focus
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="timer">
+
+                    <span id="timerMinutes">
+                        25
+                    </span>
+
+                    <small>
+                        MIN
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADD GOAL MODAL ================= -->
+
+        <div class="modal" id="goalModal">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-modal"
+                    id="closeModal">
+                    ×
+                </button>
+
+                <span class="section-label">
+                    NEW GOAL
+                </span>
+
+                <h2>
+                    Create a new goal
+                </h2>
+
+                <form id="goalForm">
+
+                    <label>
+                        Goal name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="goalName"
+                        placeholder="e.g. Learn React"
+                        required>
+
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="goalDescription"
+                        placeholder="Describe your goal..."
+                        rows="4">
+                    </textarea>
+
+
+                    <label>
+                        Starting progress
+                    </label>
+
+                    <input
+                        type="number"
+                        id="goalProgress"
+                        min="0"
+                        max="100"
+                        value="0">
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Create Goal
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            Mindscape
+        </div>
+
+        <p>
+            Build your world. One thought at a time.
+        </p>
+
+        <span>
+            © 2026 Mindscape
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

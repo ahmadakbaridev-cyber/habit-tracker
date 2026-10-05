@@ -1,6 +1,6 @@
-/* ===============================
-   تنظیمات اصلی
-================================ */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -8,396 +8,1339 @@
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-
-    background: #f4f4f5;
-
-    color: #18181b;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: #09090d;
+    color: #f5f5f7;
     min-height: 100vh;
-
-    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
 
-/* ===============================
-   برنامه
-================================ */
+button,
+input,
+textarea {
+    font: inherit;
+}
 
-.app {
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
     width: 100%;
+    height: 78px;
 
-    max-width: 500px;
-
-    margin: auto;
-
-    padding: 30px 18px 40px;
-}
-
-
-/* ===============================
-   Header
-================================ */
-
-header {
-    text-align: center;
-
-    margin-bottom: 25px;
-}
-
-header h1 {
-    font-size: 34px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    margin-bottom: 7px;
-}
-
-header p {
-    color: #71717a;
-
-    font-size: 15px;
-}
-
-
-/* ===============================
-   Progress Card
-================================ */
-
-.progress-section {
-    background: white;
-
-    padding: 22px;
-
-    border-radius: 24px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-.progress-section h2 {
-    font-size: 18px;
-
-    margin-bottom: 16px;
-}
-
-
-/* Progress Bar */
-
-.progress-container {
-    width: 100%;
-
-    height: 12px;
-
-    background: #e4e4e7;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-}
-
-#progress-bar {
-    width: 0%;
-
-    height: 100%;
-
-    background: #18181b;
-
-    border-radius: 20px;
-
-    transition: width 0.4s ease;
-}
-
-#progress-text {
-    margin-top: 10px;
-
-    font-size: 14px;
-
-    color: #71717a;
-}
-
-
-/* ===============================
-   Habits
-================================ */
-
-.habits-section {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 13px;
-}
-
-
-/* Habit Card */
-
-.habit {
-    background: white;
-
-    padding: 18px;
-
-    border-radius: 20px;
+    padding: 0 7%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
-    box-shadow:
-        0 6px 22px rgba(0, 0, 0, 0.05);
+    background: rgba(9, 9, 13, 0.75);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
-/* وقتی عادت انجام شده */
-
-.habit.completed {
-    background: #f0fdf4;
-
-    border: 1px solid #bbf7d0;
-}
-
-
-/* ===============================
-   Habit Text
-================================ */
-
-.habit h3 {
-    font-size: 17px;
-
-    font-weight: 700;
-
-    margin-bottom: 6px;
-}
-
-.habit p {
-    color: #71717a;
-
-    font-size: 13px;
-}
-
-
-/* ===============================
-   دکمه‌های سمت راست
-================================ */
-
-.habit > div:last-child {
+.logo {
     display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #8b8bff
+    );
+
+    color: #08080c;
+}
+
+
+.nav {
+    display: flex;
+    gap: 35px;
+}
+
+
+.nav a {
+    color: #9999a7;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.nav a:hover {
+    color: white;
+}
+
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #292933;
+    border-radius: 50%;
+
+    background: #111117;
+    color: white;
+
+    transition: 0.3s;
+}
+
+
+.theme-btn:hover {
+    transform: rotate(30deg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 700px;
+
+    padding: 100px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
-    gap: 6px;
-
-    flex-shrink: 0;
+    gap: 50px;
 }
 
 
-/* ===============================
-   Done Button
-================================ */
+.hero-content {
+    max-width: 650px;
+}
 
-.done-btn {
-    border: none;
 
-    background: #18181b;
+.badge,
+.section-label {
+    display: inline-block;
 
-    color: white;
+    color: #9b9bff;
 
-    padding: 10px 13px;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+    margin-top: 25px;
+
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #8585ff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero p {
+    max-width: 520px;
+
+    margin-top: 30px;
+
+    color: #92929d;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 22px;
 
     border-radius: 12px;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.15s ease,
-        background 0.2s ease;
-}
-
-.done-btn:active {
-    transform: scale(0.94);
-}
-
-
-/* ===============================
-   Edit Button
-================================ */
-
-.edit-btn {
-    width: 38px;
-
-    height: 38px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #f4f4f5;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.edit-btn:active {
-    transform: scale(0.9);
-
-    background: #e4e4e7;
-}
-
-
-/* ===============================
-   Delete Button
-================================ */
-
-.delete-btn {
-    width: 38px;
-
-    height: 38px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #fef2f2;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.delete-btn:active {
-    transform: scale(0.9);
-
-    background: #fee2e2;
-}
-
-
-/* ===============================
-   Add Habit
-================================ */
-
-.add-btn {
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 16px;
-
-    border: none;
-
-    border-radius: 17px;
-
-    background: #18181b;
-
-    color: white;
-
-    font-size: 16px;
 
     font-weight: 700;
 
-    cursor: pointer;
-
-    box-shadow:0 7px 20px rgba(0, 0, 0, 0.12);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
+    transition: 0.3s;
 }
 
-.add-btn:active {
-    transform: scale(0.97);
+
+.primary-btn {
+    border: none;
+
+    background: white;
+    color: #09090d;
+}
+
+
+.primary-btn:hover {
+    transform: translateY(-3px);
 
     box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.1);
+        0 15px 40px rgba(255, 255, 255, 0.12);
 }
 
 
-/* ===============================
-   Hover برای لپ‌تاپ
-================================ */
+.secondary-btn {
+    border: 1px solid #292933;
 
-@media (hover: hover) {
-
-    .habit:hover {
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .edit-btn:hover {
-        background: #e4e4e7;
-    }
-
-    .delete-btn:hover {
-        background: #fee2e2;
-    }
-
-    .add-btn:hover {
-        transform: translateY(-1px);
-    }
+    background: #111117;
+    color: white;
 }
 
 
-/* ===============================
-   گوشی‌های کوچک
-================================ */
+.secondary-btn:hover {
+    border-color: #6666ff;
+}
 
-@media (max-width: 390px) {
 
-    .app {
-        padding: 25px 14px 35px;
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    height: 500px;
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid rgba(150, 150, 255, 0.15);
+
+    border-radius: 50%;
+}
+
+
+.orbit-one {
+    width: 430px;
+    height: 430px;
+}
+
+
+.orbit-two {
+    width: 300px;
+    height: 300px;
+}
+
+
+.core-node {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: radial-gradient(
+        circle,
+        #26265e,
+        #11111d
+    );
+
+    border: 1px solid #5757ff;
+
+    box-shadow:
+        0 0 60px rgba(85, 85, 255, 0.3);
+}
+
+
+.core-node span {
+    font-size: 30px;
+}
+
+
+.core-node small {
+    margin-top: 8px;
+
+    color: #a5a5ff;
+
+    letter-spacing: 2px;
+}
+
+
+.floating-node {
+    position: absolute;
+
+    padding: 12px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(20, 20, 30, 0.8);
+
+    border: 1px solid #2e2e40;
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(12px);
+
+    z-index: 5;
+}
+
+
+.floating-node strong {
+    font-size: 13px;
+}
+
+
+.floating-node small {
+    color: #7f7fff;
+}
+
+
+.node-one {
+    top: 60px;
+    right: 70px;
+}
+
+
+.node-two {
+    top: 210px;
+    right: 0;
+}
+
+
+.node-three {
+    bottom: 80px;
+    left: 40px;
+}
+
+
+.node-four {
+    top: 80px;
+    left: 30px;
+}
+
+
+.connection {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #5656ff,
+        transparent
+    );
+
+    transform-origin: left center;
+
+    opacity: 0.4;
+}
+
+
+.connection-one {
+    width: 170px;
+
+    top: 220px;
+    left: 60%;
+
+    transform: rotate(-30deg);
+}
+
+
+.connection-two {
+    width: 150px;
+
+    top: 280px;
+    left: 62%;
+
+    transform: rotate(10deg);
+}
+
+
+.connection-three {
+    width: 170px;
+
+    top: 300px;
+    left: 28%;
+
+    transform: rotate(155deg);
+}
+
+
+.connection-four {
+    width: 150px;
+
+    top: 240px;
+    left: 38%;
+
+    transform: rotate(210deg);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    width: 86%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #22222b;
+    border-bottom: 1px solid #22222b;
+}
+
+
+.stat-card {
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border-right: 1px solid #22222b;
+}
+
+
+.stat-card:last-child {
+    border-right: none;
+}
+
+
+.stat-icon {
+    font-size: 25px;
+
+    color: #7777ff;
+}
+
+
+.stat-card strong {
+    font-size: 24px;
+}
+
+
+.stat-card p {
+    margin-top: 5px;
+
+    color: #777783;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.mindmap-section,
+.goals-section,
+.focus-section {
+    width: 86%;
+    margin: auto;
+    padding: 120px 0;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    font-size: 45px;
+
+    letter-spacing: -2px;
+}
+
+
+.section-heading p {
+    margin-top: 10px;
+
+    color: #777783;
+}
+
+
+.add-btn {
+    padding: 12px 18px;
+
+    border: 1px solid #30303b;
+
+    border-radius: 10px;
+
+    background: #111117;
+    color: white;
+}
+
+
+.add-btn:hover {
+    border-color: #6666ff;
+}
+
+
+/* =========================
+   MIND MAP
+========================= */
+
+.mindmap {
+    height: 650px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #24242e;
+    border-radius: 25px;
+
+    background: #0c0c12;
+}
+
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+
+.map-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.center-ring {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(100,100,255,0.25);
+
+    border-radius: 50%;
+}
+
+
+.center-node {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #16162a;
+
+    border: 1px solid #6666ff;
+
+    box-shadow:
+        0 0 50px rgba(80,80,255,0.25);
+
+    position: relative;
+    z-index: 5;
+}
+
+
+.center-node span {
+    font-size: 24px;
+}
+
+
+.center-node small {
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    color: #8888ff;
+
+    letter-spacing: 2px;
+}
+
+
+/* Goal Nodes */
+
+.goal-node {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.goal-node:hover {
+    transform: scale(1.08);
+}
+
+
+.goal-circle {
+    width: 70px;
+    height: 70px;
+
+    display: grid;place-items: center;
+
+    border-radius: 50%;
+
+    background: #15151e;
+
+    border: 1px solid #4b4b60;
+
+    box-shadow:
+        0 0 30px rgba(100,100,255,0.1);
+}
+
+
+.goal-circle span {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #aaaaff;
+}
+
+
+.goal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.goal-info strong {
+    font-size: 14px;
+}
+
+
+.goal-info span {
+    font-size: 11px;
+
+    color: #7777ff;
+}
+
+
+.goal-a {
+    top: 100px;
+    left: 18%;
+}
+
+
+.goal-b {
+    top: 140px;
+    right: 15%;
+}
+
+
+.goal-c {
+    bottom: 100px;
+    left: 17%;
+}
+
+
+.goal-d {
+    bottom: 120px;
+    right: 15%;
+}
+
+
+.map-line {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #41415d,
+        transparent
+    );
+
+    transform-origin: center;
+
+    z-index: 1;
+}
+
+
+.line-a {
+    width: 300px;
+
+    left: 28%;
+    top: 38%;
+
+    transform: rotate(30deg);
+}
+
+
+.line-b {
+    width: 300px;
+
+    left: 50%;
+    top: 40%;
+
+    transform: rotate(-30deg);
+}
+
+
+.line-c {
+    width: 300px;
+
+    left: 28%;
+    top: 62%;
+
+    transform: rotate(-30deg);
+}
+
+
+.line-d {
+    width: 300px;
+
+    left: 50%;
+    top: 62%;
+
+    transform: rotate(30deg);
+}
+
+
+/* =========================
+   GOAL CARDS
+========================= */
+
+.goal-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.goal-card {
+    padding: 30px;
+
+    border: 1px solid #25252f;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111117,
+            #0c0c11
+        );
+
+    transition: 0.3s;
+}
+
+
+.goal-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #4c4cff;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
+}
+
+
+.goal-card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.goal-symbol {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: #19192c;
+
+    color: #8888ff;
+
+    font-weight: 700;
+}
+
+
+.percentage {
+    color: #8888ff;
+
+    font-weight: 700;
+}
+
+
+.goal-card h3 {
+    margin-top: 25px;
+
+    font-size: 22px;
+}
+
+
+.goal-card p {
+    margin-top: 10px;
+
+    color: #777783;
+
+    line-height: 1.6;
+}
+
+
+.progress {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    background: #20202a;
+
+    border-radius: 20px;
+}
+
+
+.progress-bar {
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5c5cff,
+            #a0a0ff
+        );
+
+    border-radius: inherit;
+}
+
+
+.goal-footer {
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    color: #666672;
+
+    font-size: 12px;
+}
+
+
+.goal-action {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #292934;
+
+    border-radius: 50%;
+
+    background: #12121a;
+
+    color: white;
+}
+
+
+.goal-action:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.focus-card {
+    min-height: 320px;
+
+    padding: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #292936;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(80,80,255,0.12),
+            transparent 40%
+        ),
+        #0d0d13;
+}
+
+
+.focus-content h2 {
+    margin-top: 15px;
+
+    font-size: 45px;
+}
+
+
+.focus-content p {
+    max-width: 450px;
+
+    margin: 15px 0 30px;
+
+    color: #777783;
+
+    line-height: 1.7;
+}
+
+
+.timer {
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #45455c;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset 0 0 40px rgba(80,80,255,0.1),
+        0 0 50px rgba(80,80,255,0.08);
+}
+
+
+.timer span {
+    font-size: 65px;
+
+    font-weight: 700;
+}
+
+
+.timer small {
+    color: #7777ff;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.modal.active {
+    display: flex;
+}
+
+
+.modal-box {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px;
+
+    position: relative;
+
+    border: 1px solid #30303c;
+
+    border-radius: 20px;
+
+    background: #111117;
+}
+
+
+.modal-box h2 {
+    margin: 12px 0 30px;
+
+    font-size: 30px;
+}
+
+
+.close-modal {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #22222c;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+#goalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#goalForm label {
+    margin-top: 10px;
+
+    color: #aaaab5;
+
+    font-size: 13px;
+}
+
+
+#goalForm input,
+#goalForm textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #2b2b37;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #0b0b10;
+
+    color: white;
+
+    resize: vertical;
+}
+
+
+#goalForm input:focus,
+#goalForm textarea:focus {
+    border-color: #6666ff;
+}
+
+
+#goalForm .primary-btn {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 50px 7%;
+
+    border-top: 1px solid #22222b;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: #666672;
+}
+
+
+.footer p {
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        display: none;
     }
 
-    header h1 {
-        font-size: 30px;
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
     }
 
-    .habit {
-        padding: 15px;
 
-        border-radius: 17px;
+    .hero-visual {
+        height: 420px;
     }
 
-    .habit h3 {
-        font-size: 15px;
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .done-btn {
-        padding: 9px 10px;
 
-        font-size: 12px;
+    .stat-card:nth-child(2) {
+        border-right: none;
     }
 
-    .edit-btn,
-    .delete-btn {
-        width: 34px;
 
-        height: 34px;
-
-        border-radius: 10px;
-
-        font-size: 14px;
+    .goal-grid {
+        grid-template-columns: 1fr;
     }
+
+
+    .focus-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+
+    .hero {
+        padding: 70px 5%;
+    }
+
+
+    .hero h1 {
+        font-size: 50px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-visual {
+        transform: scale(0.75);
+
+        margin: -50px 0;
+    }
+
+
+    .stats {
+        width: 90%;
+    }
+
+
+    .stat-card {
+        padding: 20px;
+
+        border-bottom: 1px solid #22222b;
+    }
+
+
+    .mindmap-section,
+    .goals-section,
+    .focus-section {
+        width: 90%;
+
+        padding: 80px 0;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+
+    .mindmap {
+        height: 500px;
+    }
+
+
+    .goal-a {
+        left: 5%;
+    }
+
+
+    .goal-b {
+        right: 5%;
+    }
+
+
+    .goal-c {
+        left: 5%;
+    }
+
+
+    .goal-d {
+        right: 5%;
+    }
+
+
+    .goal-info {
+        display: none;
+    }
+
+
+    .focus-card {
+        padding: 35px;
+    }
+
+
+    .focus-content h2 {
+        font-size: 35px;
+    }
+
+
+    .timer {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    .footer {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
 }
